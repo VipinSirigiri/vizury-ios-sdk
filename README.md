@@ -18,10 +18,10 @@
 	* [Configuring Application](#config-app) 
 	* [DeepLinks](#deeplinks)
  
- ## <a id="basic-integration"></a>Basic Integration
+## <a id="basic-integration"></a>Basic Integration
 
 ### <a id="sdk-get"></a>Getting the SDK
-Download the latest Vizury ios SDK [`VizuryEventLogger`][VizuryEventLogger_ios] . Extract the archive into a directory of your choice. The extracted file is `VizuryEventLogger.framework`
+Download the latest Vizury iOS SDK [`VizuryEventLogger`][VizuryEventLogger_ios] . Extract the archive into a directory of your choice. The extracted file is `VizuryEventLogger.framework`
 
 ### <a id="sdk-add"></a>Add the SDK to project
 Go to the Build phases -> Link Binary with Libraries
@@ -77,6 +77,7 @@ Create an attributeDictionary with the attributes associated with the event and 
     [VizuryEventLogger logEvent:@"productPage" WithAttributes:attributeDictionary];
 ```
 
+
 ## <a id="push-notifications"></a>Push Notifications
 
 ### <a id="config-apple-dev"></a>Configuring Apple Developer Settings
@@ -94,9 +95,8 @@ You can create both in the [Apple Developer Member Center][apple-dev-member-cent
 
 For sending push notifications we are using GCM-APNS interface. For this you need to get a configuration file from google	
 
-### <a id="setup-pods"></a>Set up CocoaPods dependencies
 
-Set up CocoaPods dependencies
+### <a id="setup-pods"></a>Set up CocoaPods dependencies
 
 * If you don't have an Xcode project yet, create one now.
 * Create a Podfile if you don't have one:
@@ -121,7 +121,7 @@ $ open your-project.xcworkspace
 	
 ### <a id="enable-gcm"></a>Enabling GCM
 
-Create a google project [here][create-project] if you dont already have one.
+Create a google project [here][create-project] if you don't already have one.
 
 ![createProject-1](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/createProject-1.png)
 
