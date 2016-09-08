@@ -49,7 +49,7 @@ Click on `Add Other` and add the extracted `VizuryEventLogger.framework` file
  #import <VizuryEventLogger/VizuryEventLogger.h>
  ```
  
- Add the follwing in `didFinishLaunchingWithOptions` method to initialize the SDK
+ Add the follwing in `didFinishLaunchingWithOptions` method of AppDelegate to initialize the SDK
  
 ```objc
   [VizuryEventLogger initializeEventLoggerInApplication:(UIApplication*)application
