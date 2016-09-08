@@ -1,4 +1,4 @@
-![Vizury Logo](https://github.com/vizury/vizury-ios-sdk/blob/master/VizuryLogo.png)
+![Vizury Logo](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/VizuryLogo.png)
 ## Summary
  This is iOS SDK integration guide.
 
