@@ -18,6 +18,13 @@
 	* [Configuring Application](#config-app) 
 	* [DeepLinks](#deeplinks)
  
+## <a id="example-app"></a>Example app
+
+Examples on how the Vizury iOS SDK can be integrated.
+
+`examples/HelloVizuryIos` is a sample app having a basic integration with vizury SDK.
+
+
 ## <a id="basic-integration"></a>Basic Integration
 
 ### <a id="sdk-get"></a>Getting the SDK
