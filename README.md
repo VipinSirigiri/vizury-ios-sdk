@@ -133,12 +133,11 @@ Create a google project [here][create-project] if you don't already have one. En
 
 Click `Cloud Messaging` -> upload APNS Certificate (P12 format) and click on `ENABLE CLOUD MESSAGING`.
 
-`Note: When you are developing, upload the development APNS certificate to get the development configuration file. While releasing upload production APNS certificate to get production configuration file and use it in the project. Also make sure you change the AndGCMWithSandBoxOption value to @NO while` [initializing the vizury sdk](#sdk-init)
-
 ![createProject-3](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/createProject-3.png)
 
 Click on `Generate configuration Files` and download the `GoogleService-Info.plist` file. Also note down the the `Server API Key` as this will be required later during the integration
 
+`Note: When you are developing, upload the development APNS certificate to get the development configuration file. While releasing upload production APNS certificate to get production configuration file and use it in the project. Also make sure you change the AndGCMWithSandBoxOption value to @NO while` [initializing the vizury sdk](#sdk-init)
 
 ### <a id="config-app"></a>Configuring Application
 
