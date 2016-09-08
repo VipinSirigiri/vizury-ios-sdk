@@ -1,6 +1,6 @@
 ![Vizury Logo](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/VizuryLogo.png)
 ## Summary
- This is iOS SDK integration guide.
+ This is iOS SDK integration guide. The SDK supports iOS7 and above.
 
 ## Components
 
