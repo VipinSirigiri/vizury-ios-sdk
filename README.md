@@ -31,12 +31,12 @@ Examples on how the Vizury iOS SDK can be integrated.
 Download the latest Vizury iOS SDK [`VizuryEventLogger`][VizuryEventLogger_ios] . Extract the archive into a directory of your choice. The extracted file is `VizuryEventLogger.framework`
 
 ### <a id="sdk-add"></a>Add the SDK to project
-Go to the Build phases -> Link Binary with Libraries
+Go to the Build phases -> Link Binary with Libraries. Click on the `+` icon
 
 ![addSDK-1](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/addSDK-1.png)
 
 
-Click on the `+` icon -> Add Other. Add the extracted `VizuryEventLogger.framework` file
+Click on `Add Other` and add the extracted `VizuryEventLogger.framework` file
 
 ![addSDK-2](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/addSDK-2.png)
 
