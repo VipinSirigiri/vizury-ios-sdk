@@ -121,7 +121,7 @@ $ open your-project.xcworkspace
 	
 ### <a id="enable-gcm"></a>Enabling GCM
 
-Create a google project [here][create-project] if you don't already have one.
+Create a google project [here][create-project] if you don't already have one. Enter the `AppName` and `iOS Bundle Id`. The `iOS Bundle Id` should be same as your apps bundle identifier.
 
 ![createProject-1](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/createProject-1.png)
 
@@ -136,7 +136,7 @@ Click on `Generate configuration Files` and download the `GoogleService-Info.pli
 
 ### <a id="config-app"></a>Configuring Application
 
-* Add the downloaded GoogleService-Info.plist in the root directory of your project.
+* Drag the GoogleService-Info.plist file you just downloaded into the root of your Xcode project and add it to all targets
 * Register for Pushnotifications inside didFinishLaunchingWithOptions method of you AppDelegate
 
 ```objc
