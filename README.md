@@ -70,7 +70,7 @@ Where
 ### <a id="event-logging"></a>Event Logging
 
 When a user browse through the app, various activities happen e.g. visiting a product, adding the product to cart, making purchase, etc. These are called events. Corresponding to each event, app needs to pass certain variables to the SDK which the SDK will automatically pass to Vizury servers.
-Create an attributeDictionary with the attributes associated with the event and call `VizuryEventLogger logEvent` with event name and the attributeDictionary.
+Create an attributeDictionary with the attributes associated with the event and call `[VizuryEventLogger logEvent]` with event name and the attributeDictionary.
 
 ```objc
 	#import <VizuryEventLogger/VizuryEventLogger.h>
