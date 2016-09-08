@@ -12,8 +12,11 @@
       * [Event Logging](#event-logging)
   * [Push Notifications](#push-notifications)
       * [Configuring Apple Developer Settings](#config-apple-dev)
-      * [Enabling GCM](#enabling-gcm)
+      * [Configuring project for GCM](#config-gcm)
+	* [Set up CocoaPods dependencies](#setup-pods)
+	* [Enabling GCM](#enable-gcm)
       * [Configuring Application](#config-app) 
+      * [DeepLinks](#deeplinks)
  
  ## <a id="basic-integration"></a>Basic Integration
 
@@ -76,7 +79,7 @@ Create an attributeDictionary with the attributes associated with the event and 
 
 ## <a id="push-notifications"></a>Push Notifications
 
-## <a id="config-apple-dev"></a>Configuring Apple Developer Settings
+### <a id="config-apple-dev"></a>Configuring Apple Developer Settings
 
 To enable sending Push Notifications through APNs, you need:
     a) An SSL certificate associated with an App ID configured for Push Notifications.
@@ -84,9 +87,11 @@ To enable sending Push Notifications through APNs, you need:
 
 	You can create both in the [Apple Developer Member Center][apple-dev-member-center].
 
-## <a id="enabling-gcm"></a>Enabling GCM
+### <a id="config-gcm"></a>Configuring project for GCM
 
 For sending push notifications we are using GCM-APNS interface. For this you need to get a configuration file from google	
+
+### <a id="setup-pods"></a>Set up CocoaPods dependencies
 
 Set up CocoaPods dependencies
 
@@ -110,21 +115,96 @@ pod 'Google/CloudMessaging'
 $ pod install
 $ open your-project.xcworkspace
 ```
+	
+### <a id="enable-gcm"></a>Enabling GCM
 
-Configuring project for GCM
-
-1. Create a google project [here][create-project] if you dont already have one.
+Create a google project [here][create-project] if you dont already have one.
 
 ![createProject-1](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/createProject-1.png)
 
-Enable Cloud Messaging and upload APNS Certificate (P12 format) and click on ENABLE COLUD MESSAGING.
-Note: You can upload development or production APNS certificate and configuration file will be generated accordingly
+Click `Cloud Messaging` -> upload APNS Certificate (P12 format) and click on `ENABLE CLOUD MESSAGING`.
+
+`Note: You can upload development or production APNS certificate and configuration file will be generated accordingly`
 
 ![createProject-3](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/createProject-3.png)
 
-Download the GoogleService-Info.plist file
+Click on `Generate configuration Files` and download the `GoogleService-Info.plist` file. Also note down the the `Server API Key` as this will be required later during the integration
 
-2. Add the GoogleService-Info.plist in the root directory of your project.
+
+### <a id="config-app"></a>Configuring Application
+
+1. Add the downloaded GoogleService-Info.plist in the root directory of your project.
+2. Register for Pushnotifications inside didFinishLaunchingWithOptions method of you AppDelegate
+
+```objc
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
+        // iOS 7.1 or earlier
+        UIRemoteNotificationType allNotificationTypes =
+        (UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge);
+        [application registerForRemoteNotificationTypes:allNotificationTypes];
+    } else {
+        // iOS 8 or later
+        UIUserNotificationType allNotificationTypes =
+        (UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge);
+        UIUserNotificationSettings *settings =
+        [UIUserNotificationSettings settingsForTypes:allNotificationTypes categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    }
+```
+
+3. Post Registration 
+
+Pass the APNS token to Vizury
+
+```objc
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+
+    [VizuryEventLogger registerForPushWithToken:deviceToken];
+}
+```
+
+In case of any failed registration
+
+```objc
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+
+    [VizuryEventLogger didFailToRegisterForPush];
+}
+```
+
+4. Handling notification payload
+
+```objc
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(							UIBackgroundFetchResult))completionHandler {
+    [VizuryEventLogger didReceiveRemoteNotificationInApplication:application withUserInfo:userInfo];
+ }
+```
+
+### <a id="deeplinks"></a> Deeplinks
+
+In order to open Deep Links that are sent to the device as a Key/Value pair along with a push notification you must implement a custom handler
+
+```objc
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(							UIBackgroundFetchResult))completionHandler {
+    [VizuryEventLogger didReceiveRemoteNotificationInApplication:application withUserInfo:userInfo];
+    if(application.applicationState == UIApplicationStateInactive) {
+        NSLog(@"Appilication Inactive - the user has tapped in the notification when app was closed or in background");
+    	[self customPushHandler:userInfo];
+    }
+ }
+
+- (void) customPushHandler:(NSDictionary *)notification {
+    if (notification !=nil && [notification objectForKey:@"deeplink"] != nil) {
+        NSString* deeplink = [notification objectForKey:@"deeplink"];
+        NSLog(@"%@",deeplink);
+        // Here based on the deeplink you can open specific screens that's part of your app
+    }
+}
+```
+
+
+
 
  
  [VizuryEventLogger_ios]:    https://github.com/vizury/vizury-ios-sdk/blob/master/VizuryEventLogger.framework.zip
