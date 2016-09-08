@@ -36,7 +36,7 @@ Go to the Build phases -> Link Binary with Libraries. Click on the `+` icon
 ![addSDK-1](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/addSDK-1.png)
 
 
-Click on `Add Other` and add the extracted `VizuryEventLogger.framework` file
+Add `Foundation.framework` , then click on `Add Other` and add the extracted `VizuryEventLogger.framework` file
 
 ![addSDK-2](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/addSDK-2.png)
 
