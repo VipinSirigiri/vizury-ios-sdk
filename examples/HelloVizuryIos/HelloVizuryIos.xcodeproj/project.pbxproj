@@ -14,8 +14,9 @@
 		75FB6DE71D817CDF00CBFDE4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75FB6DE61D817CDF00CBFDE4 /* Images.xcassets */; };
 		75FB6DEA1D817CDF00CBFDE4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75FB6DE81D817CDF00CBFDE4 /* LaunchScreen.xib */; };
 		75FB6DF61D817CE000CBFDE4 /* HelloVizuryIosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FB6DF51D817CE000CBFDE4 /* HelloVizuryIosTests.m */; };
-		75FB6E031D817FD400CBFDE4 /* VizuryEventLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FB6E011D817F2200CBFDE4 /* VizuryEventLogger.framework */; };
 		75FB6E051D81B7AF00CBFDE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FB6E041D81B7AF00CBFDE4 /* Foundation.framework */; };
+		75FB6E091D81BDC000CBFDE4 /* VizuryEventLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FB6E081D81BDC000CBFDE4 /* VizuryEventLogger.framework */; };
+		75FB6E0B1D81BDD100CBFDE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75FB6E0A1D81BDD100CBFDE4 /* GoogleService-Info.plist */; };
 		789FF4F6AFE70CC425688913 /* libPods-HelloVizuryIos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1851E62A5B182172713423B9 /* libPods-HelloVizuryIos.a */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,8 @@
 		75FB6DF51D817CE000CBFDE4 /* HelloVizuryIosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloVizuryIosTests.m; sourceTree = "<group>"; };
 		75FB6E011D817F2200CBFDE4 /* VizuryEventLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VizuryEventLogger.framework; path = "../../app2app/vizury-ios-sdk.git/VizuryEventLogger.framework"; sourceTree = "<group>"; };
 		75FB6E041D81B7AF00CBFDE4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		75FB6E081D81BDC000CBFDE4 /* VizuryEventLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VizuryEventLogger.framework; sourceTree = "<group>"; };
+		75FB6E0A1D81BDD100CBFDE4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E468A7537C4A51E08E06EC97 /* Pods-HelloVizuryIos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloVizuryIos.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloVizuryIos/Pods-HelloVizuryIos.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,8 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75FB6E091D81BDC000CBFDE4 /* VizuryEventLogger.framework in Frameworks */,
 				75FB6E051D81B7AF00CBFDE4 /* Foundation.framework in Frameworks */,
-				75FB6E031D817FD400CBFDE4 /* VizuryEventLogger.framework in Frameworks */,
 				789FF4F6AFE70CC425688913 /* libPods-HelloVizuryIos.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +77,7 @@
 		629EAF05F0F8115AF478ABB1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75FB6E081D81BDC000CBFDE4 /* VizuryEventLogger.framework */,
 				75FB6E041D81B7AF00CBFDE4 /* Foundation.framework */,
 				1851E62A5B182172713423B9 /* libPods-HelloVizuryIos.a */,
 			);
@@ -104,6 +108,7 @@
 		75FB6DD81D817CDF00CBFDE4 /* HelloVizuryIos */ = {
 			isa = PBXGroup;
 			children = (
+				75FB6E0A1D81BDD100CBFDE4 /* GoogleService-Info.plist */,
 				75FB6DDD1D817CDF00CBFDE4 /* AppDelegate.h */,
 				75FB6DDE1D817CDF00CBFDE4 /* AppDelegate.m */,
 				75FB6DE01D817CDF00CBFDE4 /* ViewController.h */,
@@ -235,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75FB6DE51D817CDF00CBFDE4 /* Main.storyboard in Resources */,
+				75FB6E0B1D81BDD100CBFDE4 /* GoogleService-Info.plist in Resources */,
 				75FB6DEA1D817CDF00CBFDE4 /* LaunchScreen.xib in Resources */,
 				75FB6DE71D817CDF00CBFDE4 /* Images.xcassets in Resources */,
 			);
@@ -432,6 +438,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/anurag/Documents/app2app/vizury-ios-sdk.git",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HelloVizuryIos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -447,6 +454,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/anurag/Documents/app2app/vizury-ios-sdk.git",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HelloVizuryIos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
