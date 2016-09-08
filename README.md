@@ -6,17 +6,17 @@
 
   * [Example app](#example-app)
   * [Basic Integration](#basic-integration)
-      * [Getting the SDK](#sdk-get)
-      * [Add the SDK to project](#sdk-add)
-      * [Vizury SDK Initialization](#sdk-init)
-      * [Event Logging](#event-logging)
+	* [Getting the SDK](#sdk-get)
+	* [Add the SDK to project](#sdk-add)
+	* [Vizury SDK Initialization](#sdk-init)
+	* [Event Logging](#event-logging)
   * [Push Notifications](#push-notifications)
-      * [Configuring Apple Developer Settings](#config-apple-dev)
-      * [Configuring project for GCM](#config-gcm)
-	* [Set up CocoaPods dependencies](#setup-pods)
-	* [Enabling GCM](#enable-gcm)
-      * [Configuring Application](#config-app) 
-      * [DeepLinks](#deeplinks)
+	* [Configuring Apple Developer Settings](#config-apple-dev)
+	* [Configuring project for GCM](#config-gcm)
+		* [Set up CocoaPods dependencies](#setup-pods)
+		* [Enabling GCM](#enable-gcm)
+	* [Configuring Application](#config-app) 
+	* [DeepLinks](#deeplinks)
  
  ## <a id="basic-integration"></a>Basic Integration
 
@@ -81,11 +81,14 @@ Create an attributeDictionary with the attributes associated with the event and 
 
 ### <a id="config-apple-dev"></a>Configuring Apple Developer Settings
 
-To enable sending Push Notifications through APNs, you need:
-    a) An SSL certificate associated with an App ID configured for Push Notifications.
-    b) Provisioning profile for that App ID.
+To enable sending Push Notifications through APNs, you need
 
-	You can create both in the [Apple Developer Member Center][apple-dev-member-center].
+a) An SSL certificate associated with an App ID configured for Push Notifications.
+    
+b) Provisioning profile for that App ID.
+
+You can create both in the [Apple Developer Member Center][apple-dev-member-center]
+
 
 ### <a id="config-gcm"></a>Configuring project for GCM
 
@@ -95,21 +98,21 @@ For sending push notifications we are using GCM-APNS interface. For this you nee
 
 Set up CocoaPods dependencies
 
-1. If you don't have an Xcode project yet, create one now.
-2. Create a Podfile if you don't have one:
+* If you don't have an Xcode project yet, create one now.
+* Create a Podfile if you don't have one:
 
 ```
 $ cd your-project directory
 $ pod init
 ```
 
-3. Add the pods that you want to install. You can include a Pod in your Podfile like this:
+* Add the pods that you want to install. You can include a Pod in your Podfile like this:
 
 ```
 pod 'Google/CloudMessaging'
 ```
 
-4. Install the pods and open the .xcworkspace file to see the project in Xcode.
+* Install the pods and open the .xcworkspace file to see the project in Xcode.
 
 ```
 $ pod install
@@ -133,8 +136,8 @@ Click on `Generate configuration Files` and download the `GoogleService-Info.pli
 
 ### <a id="config-app"></a>Configuring Application
 
-1. Add the downloaded GoogleService-Info.plist in the root directory of your project.
-2. Register for Pushnotifications inside didFinishLaunchingWithOptions method of you AppDelegate
+* Add the downloaded GoogleService-Info.plist in the root directory of your project.
+* Register for Pushnotifications inside didFinishLaunchingWithOptions method of you AppDelegate
 
 ```objc
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
@@ -153,7 +156,7 @@ Click on `Generate configuration Files` and download the `GoogleService-Info.pli
     }
 ```
 
-3. Post Registration 
+* Post Registration 
 
 Pass the APNS token to Vizury
 
@@ -173,7 +176,7 @@ In case of any failed registration
 }
 ```
 
-4. Handling notification payload
+* Handling notification payload
 
 ```objc
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(							UIBackgroundFetchResult))completionHandler {
