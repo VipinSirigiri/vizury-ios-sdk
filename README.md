@@ -80,6 +80,8 @@ Create an attributeDictionary with the attributes associated with the event and 
 
 ## <a id="push-notifications"></a>Push Notifications
 
+For sending push notifications we are using GCM-APNS interface. For this you need to configure the App for push notifications in [Apple Developer Member Center][apple-dev-member-center] and get a configuration file from google.
+
 ### <a id="config-apple-dev"></a>Configuring Apple Developer Settings
 
 To enable sending Push Notifications through APNs, you need
@@ -93,10 +95,7 @@ You can create both in the [Apple Developer Member Center][apple-dev-member-cent
 
 ### <a id="config-gcm"></a>Configuring project for GCM
 
-For sending push notifications we are using GCM-APNS interface. For this you need to get a configuration file from google	
-
-
-### <a id="setup-pods"></a>Set up CocoaPods dependencies
+#### <a id="setup-pods"></a>Set up CocoaPods dependencies
 
 * If you don't have an Xcode project yet, create one now.
 * Create a Podfile if you don't have one:
@@ -119,7 +118,7 @@ $ pod install
 $ open your-project.xcworkspace
 ```
 	
-### <a id="enable-gcm"></a>Enabling GCM
+#### <a id="enable-gcm"></a>Enabling GCM
 
 Create a google project [here][create-project] if you don't already have one. Enter the `AppName` and `iOS Bundle Id`. The `iOS Bundle Id` should be same as your apps bundle identifier.
 
