@@ -18,6 +18,13 @@
 	* [Configuring Application](#config-app) 
 	* [DeepLinks](#deeplinks)
  
+## <a id="example-app"></a>Example app
+
+Examples on how the Vizury iOS SDK can be integrated.
+
+`examples/HelloVizuryIos` is a sample app having a basic integration with vizury SDK.
+
+
 ## <a id="basic-integration"></a>Basic Integration
 
 ### <a id="sdk-get"></a>Getting the SDK
@@ -209,6 +216,6 @@ In order to open Deep Links that are sent to the device as a Key/Value pair alon
 
 
  
- [VizuryEventLogger_ios]:    https://github.com/vizury/vizury-ios-sdk/blob/master/VizuryEventLogger.framework.zip
+ [VizuryEventLogger_ios]:    https://github.com/vizury/vizury-ios-sdk/tree/master/binary
  [apple-dev-member-center]:  https://developer.apple.com/membercenter/index.action
  [create-project]:           https://developers.google.com/mobile/add?platform=ios
