@@ -31,12 +31,12 @@ Examples on how the Vizury iOS SDK can be integrated.
 Download the latest Vizury iOS SDK [`VizuryEventLogger`][VizuryEventLogger_ios] . Extract the archive into a directory of your choice. The extracted file is `VizuryEventLogger.framework`
 
 ### <a id="sdk-add"></a>Add the SDK to project
-Go to the Build phases -> Link Binary with Libraries
+Go to the Build phases -> Link Binary with Libraries. Click on the `+` icon
 
 ![addSDK-1](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/addSDK-1.png)
 
 
-Click on the `+` icon -> Add Other. Add the extracted `VizuryEventLogger.framework` file
+Click on `Add Other` and add the extracted `VizuryEventLogger.framework` file
 
 ![addSDK-2](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/addSDK-2.png)
 
@@ -49,7 +49,7 @@ Click on the `+` icon -> Add Other. Add the extracted `VizuryEventLogger.framewo
  #import <VizuryEventLogger/VizuryEventLogger.h>
  ```
  
- Add the follwing in `didFinishLaunchingWithOptions` method to initialize the SDK
+ Add the following in `didFinishLaunchingWithOptions` method of AppDelegate to initialize the SDK
  
 ```objc
   [VizuryEventLogger initializeEventLoggerInApplication:(UIApplication*)application
@@ -70,7 +70,7 @@ Where
 ### <a id="event-logging"></a>Event Logging
 
 When a user browse through the app, various activities happen e.g. visiting a product, adding the product to cart, making purchase, etc. These are called events. Corresponding to each event, app needs to pass certain variables to the SDK which the SDK will automatically pass to Vizury servers.
-Create an attributeDictionary with the attributes associated with the event and call `VizuryEventLogger logEvent` with event name and the attributeDictionary.
+Create an attributeDictionary with the attributes associated with the event and call `[VizuryEventLogger logEvent]` with event name and the attributeDictionary.
 
 ```objc
 	#import <VizuryEventLogger/VizuryEventLogger.h>
@@ -104,21 +104,21 @@ You can create both in the [Apple Developer Member Center][apple-dev-member-cent
 
 #### <a id="setup-pods"></a>Set up CocoaPods dependencies
 
-* If you don't have an Xcode project yet, create one now.
-* Create a Podfile if you don't have one:
+* If you don't have an Xcode project yet, create one now
+* Create a Podfile if you don't have one
 
 ```
 $ cd your-project directory
 $ pod init
 ```
 
-* Add the pods that you want to install. You can include a Pod in your Podfile like this:
+* Add the `Google/CloudMessaging` pod
 
 ```
 pod 'Google/CloudMessaging'
 ```
 
-* Install the pods and open the .xcworkspace file to see the project in Xcode.
+* Install the pods and open the .xcworkspace file to see the project in Xcode
 
 ```
 $ pod install
@@ -133,12 +133,11 @@ Create a google project [here][create-project] if you don't already have one. En
 
 Click `Cloud Messaging` -> upload APNS Certificate (P12 format) and click on `ENABLE CLOUD MESSAGING`.
 
-`Note: You can upload development or production APNS certificate and configuration file will be generated accordingly`
-
 ![createProject-3](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/createProject-3.png)
 
 Click on `Generate configuration Files` and download the `GoogleService-Info.plist` file. Also note down the the `Server API Key` as this will be required later during the integration
 
+`Note: When you are developing, upload the development APNS certificate to get the development configuration file. While releasing upload production APNS certificate to get production configuration file and use it in the project. Also make sure you change the AndGCMWithSandBoxOption value to @NO while` [initializing the vizury sdk](#sdk-init)
 
 ### <a id="config-app"></a>Configuring Application
 
