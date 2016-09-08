@@ -104,21 +104,21 @@ You can create both in the [Apple Developer Member Center][apple-dev-member-cent
 
 #### <a id="setup-pods"></a>Set up CocoaPods dependencies
 
-* If you don't have an Xcode project yet, create one now.
-* Create a Podfile if you don't have one:
+* If you don't have an Xcode project yet, create one now
+* Create a Podfile if you don't have one
 
 ```
 $ cd your-project directory
 $ pod init
 ```
 
-* Add the pods that you want to install. You can include a Pod in your Podfile like this:
+* Add the `Google/CloudMessaging` pod
 
 ```
 pod 'Google/CloudMessaging'
 ```
 
-* Install the pods and open the .xcworkspace file to see the project in Xcode.
+* Install the pods and open the .xcworkspace file to see the project in Xcode
 
 ```
 $ pod install
