@@ -209,6 +209,6 @@ In order to open Deep Links that are sent to the device as a Key/Value pair alon
 
 
  
- [VizuryEventLogger_ios]:    https://github.com/vizury/vizury-ios-sdk/blob/master/VizuryEventLogger.framework.zip
+ [VizuryEventLogger_ios]:    https://github.com/vizury/vizury-ios-sdk/tree/master/binary
  [apple-dev-member-center]:  https://developer.apple.com/membercenter/index.action
  [create-project]:           https://developers.google.com/mobile/add?platform=ios
