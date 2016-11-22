@@ -28,7 +28,7 @@ Examples on how the Vizury iOS SDK can be integrated.
 ## <a id="basic-integration"></a>Basic Integration
 
 ### <a id="sdk-get"></a>Getting the SDK
-Download the latest Vizury iOS SDK [`VizuryEventLogger`][VizuryEventLogger_ios]. If you have bitcode enabled in the build configurations of your project then use [`BitCodeEnabled VizuryEventLogger`][VizuryEventLogger_ios_bitcode_enable] else use [`BitCodeDisabled VizuryEventLogger`][VizuryEventLogger_ios_bitcode_enable]. Extract the archive into a directory of your choice. The extracted file is `VizuryEventLogger.framework`
+Download the latest Vizury iOS SDK [`VizuryEventLogger`][VizuryEventLogger_ios]. If you have bitcode enabled in the build configurations of your project then use [`BitCodeEnabled VizuryEventLogger`][VizuryEventLogger_ios_bitcode_enable] else use [`BitCodeDisabled VizuryEventLogger`][VizuryEventLogger_ios_bitcode_disable]. Extract the archive into a directory of your choice. The extracted file is `VizuryEventLogger.framework`
 
 ### <a id="sdk-add"></a>Add the SDK to project
 Go to the Build phases -> Link Binary with Libraries. Click on the `+` icon
