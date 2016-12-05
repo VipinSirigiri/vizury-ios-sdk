@@ -97,7 +97,7 @@ a) An SSL certificate associated with an App ID configured for Push Notification
     
 b) Provisioning profile for that App ID.
 
-You can create both in the [Apple Developer Member Center][apple-dev-member-center]
+You can create both in the [Apple Developer Member Center][apple-dev-member-center]. You can follow [these steps][provisioning-profiles] for creating SSL certificats and Provisioning Profiles.
 
 
 ### <a id="config-gcm"></a>Configuring project for GCM
@@ -127,17 +127,27 @@ $ open your-project.xcworkspace
 	
 #### <a id="enable-gcm"></a>Enabling GCM
 
-Create a google project [here][create-project] if you don't already have one. Enter the `AppName` and `iOS Bundle Id`. The `iOS Bundle Id` should be same as your apps bundle identifier.
+Create a Firebase project in the [Firebase console][firebase-console] if you don't already have one. Enter the `AppName` and `Region`.
 
-![createProject-1](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/createProject-1.png)
+![createProject-1](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/create-project.png)
 
-Click `Cloud Messaging` -> upload APNS Certificate (P12 format) and click on `ENABLE CLOUD MESSAGING`.
+Click on `iOS` option and in the next screen add the `iOS Bundle Id`. The `iOS Bundle Id` should be same as your apps bundle identifier.
 
-![createProject-3](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/createProject-3.png)
+![createProject-2](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/add-bundle-id.png)
 
-Click on `Generate configuration Files` and download the `GoogleService-Info.plist` file. Also note down the the `Server API Key` as this will be required later during the integration
+You can download the `GoogleService-Info.plist` file in the next step.
+Next go the `Manage` option of the created project.
+
+![createProject-3](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/manage-app.png )
+
+Click on `Cloud Messaging` tab and upload APNS Certificates (P12 format). Also note down the the `Legacy Server key` as this will be required later during the integration
+
+![createProject-4](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/upload-p12.png )
+
 
 `Note: When you are developing, upload the development APNS certificate to get the development configuration file. While releasing upload production APNS certificate to get production configuration file and use it in the project. Also make sure you change the AndGCMWithSandBoxOption value to @NO while` [initializing the vizury sdk](#sdk-init)
+
+`Note : The GoogleService-Info.plist file that you have downloaded will have certain settings like IS_ADS_ENABLED, IS_SIGNIN_ENABLED set as YES. You have to add correspinding pod dependencies for the same or you can turn them off if you are not using them`
 
 ### <a id="config-app"></a>Configuring Application
 
@@ -218,5 +228,6 @@ In order to open Deep Links that are sent to the device as a Key/Value pair alon
  [VizuryEventLogger_ios]:    https://github.com/vizury/vizury-ios-sdk/tree/master/binary
  [VizuryEventLogger_ios_bitcode_enable]:    https://github.com/vizury/vizury-ios-sdk/tree/master/binary/bitcodeEnabled
  [VizuryEventLogger_ios_bitcode_disable]:    https://github.com/vizury/vizury-ios-sdk/tree/master/binary/bitcodeDisabled
- [apple-dev-member-center]:  https://developer.apple.com/membercenter/index.action
- [create-project]:           https://developers.google.com/mobile/add?platform=ios
+ [apple-dev-member-center]:  	https://developer.apple.com/membercenter/index.action
+ [provisioning-profiles]:	https://firebase.google.com/docs/cloud-messaging/ios/certs
+ [firebase-console]:           	https://console.firebase.google.com
