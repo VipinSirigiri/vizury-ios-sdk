@@ -2,14 +2,26 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>705137705809-rmdk7174p67k221l0sb9p8s1fsoo7ghf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.705137705809-rmdk7174p67k221l0sb9p8s1fsoo7ghf</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA8Na8IJ38xcvC290H7cjaBUP7Crdwb8p4</string>
 	<key>GCM_SENDER_ID</key>
-	<string>554492953452</string>
+	<string>705137705809</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.vizury.HelloVizuryIos</string>
 	<key>PROJECT_ID</key>
-	<string>firebase-hellovizuryios</string>
+	<string>oval-bazaar-110009</string>
+	<key>STORAGE_BUCKET</key>
+	<string>oval-bazaar-110009.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -21,6 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<false/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:554492953452:ios:c257bb9f6ce789e9</string>
+	<string>1:705137705809:ios:c257bb9f6ce789e9</string>
+	<key>DATABASE_URL</key>
+	<string>https://oval-bazaar-110009.firebaseio.com</string>
 </dict>
 </plist>
