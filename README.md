@@ -97,7 +97,7 @@ a) An SSL certificate associated with an App ID configured for Push Notification
     
 b) Provisioning profile for that App ID.
 
-You can create both in the [Apple Developer Member Center][apple-dev-member-center]. You can follow [these steps][provisioning-profiles] for creating SSL certificats and Provisioning Profiles.
+You can create both in the [Apple Developer Member Center][apple-dev-member-center]. You can follow [these steps][provisioning-profiles] for creating SSL certificates and Provisioning Profiles.
 
 
 ### <a id="config-gcm"></a>Configuring project for GCM
@@ -131,18 +131,21 @@ Create a Firebase project in the [Firebase console][firebase-console] if you don
 
 ![createProject-1](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/create-project.png)
 
-Click on `iOS` option and in the next screen add the `iOS Bundle Id`. The `iOS Bundle Id` should be same as your apps bundle identifier.
+
+Click on `iOS` option and in the next screen add the `iOS Bundle Id`. The `iOS Bundle Id` should be same as your apps bundle identifier. You can download the `GoogleService-Info.plist` file in the next step.
 
 ![createProject-2](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/add-bundle-id.png)
 
-You can download the `GoogleService-Info.plist` file in the next step.
+
 Next go the `Manage` option of the created project.
 
 ![createProject-3](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/manage-app.png )
 
+
 Click on `Cloud Messaging` tab and upload APNS Certificates (P12 format). Also note down the the `Legacy Server key` as this will be required later during the integration
 
 ![createProject-4](https://github.com/vizury/vizury-ios-sdk/blob/master/resources/upload-p12.png )
+
 
 
 `Note: When you are developing, upload the development APNS certificate to get the development configuration file. While releasing upload production APNS certificate to get production configuration file and use it in the project. Also make sure you change the AndGCMWithSandBoxOption value to @NO while` [initializing the vizury sdk](#sdk-init)
